@@ -1,0 +1,84 @@
+Ejercicio práctico: Organización y nombramiento de archivos utilizando la consola de Windows
+
+Contexto del ejercicio
+Un equipo de investigación ha generado varios archivos de datos desorganizados. El objetivo es aplicar las reglas y buenas prácticas para renombrar, organizar y documentar estos archivos usando comandos de la consola de Windows (Command Prompt).
+
+Objetivo del ejercicio
+1. Renombrar archivos para que cumplan con las buenas prácticas.
+2. Organizarlos en subcarpetas por tipo de contenido.
+3. Generar un archivo README.txt documentando el contenido.
+
+Instrucciones paso a paso
+
+1. Crear la estructura inicial del ejercicio:
+
+Crea la carpeta C:\Investigacion\DatosCrudos si no existe.
+Mueve los archivos mencionados arriba a esta carpeta.
+
+2. Renombrar archivos: Aplica las siguientes reglas de nombrado:
+
+Incluir el formato estándar de fecha (ISO: AAAA-MM-DD).
+Evitar caracteres especiales y usar guiones bajos (_) en lugar de espacios.
+Añadir un prefijo identificativo del proyecto y una descripción del archivo.
+
+Usa los siguientes comandos en la consola de Windows:
+
+cd path_to\Investigacion\DatosCrudos
+
+rename "informe1.docx" "proyectoX_2024-12-13_informe.docx"
+rename "data set 2023.xlsx" "proyectoX_2023-01-15_datos.xlsx"
+rename "proyecto_final.csv" "proyectoX_2024-12-13_resultados.csv"
+rename "resumen.doc" "proyectoX_2024-12-13_resumen.docx"
+rename "datos_finales_actualizados.txt" "proyectoX_2024-12-13_datos_finales.txt"
+
+3. Organizar archivos en subcarpetas por tipo:
+
+Crear carpetas según el tipo de archivo: Documentos, Datos.
+Mover los archivos renombrados a estas carpetas:
+
+mkdir C:\Investigacion\DatosOrganizados
+mkdir C:\Investigacion\DatosOrganizados\Documentos
+mkdir C:\Investigacion\DatosOrganizados\Datos
+
+move proyectoX_2024-12-13_informe.docx C:\Investigacion\DatosOrganizados\Documentos
+move proyectoX_2024-12-13_resumen.docx C:\Investigacion\DatosOrganizados\Documentos
+move proyectoX_2024-12-13_datos.xlsx C:\Investigacion\DatosOrganizados\Datos
+move proyectoX_2024-12-13_resultados.csv C:\Investigacion\DatosOrganizados\Datos
+move proyectoX_2024-12-13_datos_finales.txt C:\Investigacion\DatosOrganizados\Datos
+
+
+4. Documentar la estructura de archivos:
+
+Crea un archivo README.txt para documentar el contenido.
+
+cd C:\Investigacion\DatosOrganizados
+echo Proyecto X: Organización y análisis de datos. > README.txt
+echo. >> README.txt
+echo Estructura de carpetas: >> README.txt
+echo \Documentos - Contiene informes y resúmenes del proyecto. >> README.txt
+echo \Datos - Contiene archivos de datos procesados. >> README.txt
+echo. >> README.txt
+echo Archivos: >> README.txt
+echo proyectoX_2024-12-13_informe.docx - Informe final del proyecto. >> README.txt
+echo proyectoX_2024-12-13_resumen.docx - Resumen ejecutivo. >> README.txt
+echo proyectoX_2024-12-13_datos.xlsx - Dataset principal del proyecto. >> README.txt
+echo proyectoX_2024-12-13_resultados.csv - Resultados del análisis. >> README.txt
+echo proyectoX_2024-12-13_datos_finales.txt - Datos finales procesados. >> README.txt
+
+
+5. Verificar el resultado:
+
+Usa el comando tree para visualizar la estructura final:
+
+tree C:\Investigacion\DatosOrganizados /F
+
+
+C:\Investigacion\DatosOrganizados
+│   README.txt
+├───Documentos
+│       proyectoX_2024-12-13_informe.docx
+│       proyectoX_2024-12-13_resumen.docx
+├───Datos
+        proyectoX_2024-12-13_datos.xlsx
+        proyectoX_2024-12-13_resultados.csv
+        proyectoX_2024-12-13_datos_finales.txt
